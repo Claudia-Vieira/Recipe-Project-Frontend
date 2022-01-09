@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    ImageGalleryComponent
   ],
   imports: [
     BrowserModule,
