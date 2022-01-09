@@ -16,6 +16,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 //Pages
 import { ReceitasComponent } from './pages/receitas/receitas.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './pages/home/home.component';
     NavMenuComponent,
     ImageGalleryComponent,
     ReceitasComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
