@@ -3,18 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//"Style"
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SearchFormComponent } from './search-form/search-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+//Componentes
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+import { SearchFormComponent } from './search-form/search-form.component';
+
+//Pages
+import { ReceitasComponent } from './pages/receitas/receitas.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     NavMenuComponent,
-    ImageGalleryComponent
+    ImageGalleryComponent,
+    ReceitasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
