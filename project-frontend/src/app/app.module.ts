@@ -12,23 +12,27 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { CardsComponent } from './cards/cards.component';
 
 //Pages
 import { ReceitasComponent } from './pages/receitas/receitas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { CardsComponent } from './cards/cards.component';
+import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    //components
     SearchFormComponent,
     NavMenuComponent,
     ImageGalleryComponent,
+    CardsComponent,
+    //pages
     ReceitasComponent,
     HomeComponent,
     NotFoundComponent,
-    CardsComponent
+    RecipeDescriptionComponent
   ],
   imports: [
     BrowserModule,
