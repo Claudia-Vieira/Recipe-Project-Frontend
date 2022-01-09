@@ -17,6 +17,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { ReceitasComponent } from './pages/receitas/receitas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ImageGalleryComponent,
     ReceitasComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
