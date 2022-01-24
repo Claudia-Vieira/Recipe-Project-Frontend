@@ -19,10 +19,13 @@ import { ReceitasComponent } from './pages/receitas/receitas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-description.component';
+import { RecipeService } from './services/recipe.service';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HttpClient,
     //components
     SearchFormComponent,
     NavMenuComponent,
@@ -40,7 +43,7 @@ import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-de
     NgbModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
