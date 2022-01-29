@@ -9,16 +9,16 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './recipe-description.component.html',
   styleUrls: ['./recipe-description.component.css']
 })
-export class RecipeDescriptionComponent implements OnInit {
+export class RecipeDescriptionComponent /* implements OnInit */ {
 
   
- /*  public recipes: any;
+  public recipes: any;
 
   constructor(private router: Router, private recipeService: RecipeService) {
     this.recipeService.getRecipes().subscribe(result => {
       this.recipes = result;
     }, error => console.error(error));
-  } */
+  }
 
   
   public faClock = faClock;
@@ -26,7 +26,7 @@ export class RecipeDescriptionComponent implements OnInit {
 
   
   
-  public title: string = "Receita";
+  /* public title: string = "Receita";
   public imageUrl:string = "/assets/baba-camelo.jpg";
   public duration:number = 30;
   public dificulty:string = "Fácil";
@@ -34,7 +34,7 @@ export class RecipeDescriptionComponent implements OnInit {
 
   constructor() { }
   ngOnInit(): void {
-  } 
+  }  */
   
  
 

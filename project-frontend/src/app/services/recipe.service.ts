@@ -1,18 +1,20 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Recipe } from '../model/recipes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
 
-  public _baseUrl: string;
+  public baseUrl: 'https://localhost:44380/';
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this._baseUrl = baseUrl;
+  constructor(private http: HttpClient, baseUrl: any) {
+    this.baseUrl = baseUrl;
   }
 
-  getRecipes() {
-    return this.http.get(this._baseUrl + 'api/App');
+  getRecipes(): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(this.baseUrl + 'api/recipes');
   }
 }

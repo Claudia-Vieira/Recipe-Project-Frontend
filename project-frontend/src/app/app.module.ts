@@ -20,12 +20,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-description.component';
 import { RecipeService } from './services/recipe.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HttpClient,
     //components
     SearchFormComponent,
     NavMenuComponent,
@@ -41,7 +41,8 @@ import { HttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]

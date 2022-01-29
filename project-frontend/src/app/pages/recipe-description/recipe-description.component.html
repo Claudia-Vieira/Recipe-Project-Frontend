@@ -1,17 +1,17 @@
 <div class="container">
 
-<h1 class="title">{{title}}</h1>
+<h1 class="title">{{recipes.title}}</h1>
 
 <div class="row">
     <div class="col-6">
-        <img [src]=imageUrl alt={{title}}>
+        <img [src]=imageUrl alt={{recipes.title}}>
     </div>
     <div class="col-6" id="basicCharacteristics">
         <div class="row characteristicBox">
-            <p class="characteristic">Duração <fa-icon [icon]="faClock"></fa-icon> - <strong>{{duration}}min</strong></p>
+            <p class="characteristic">Duração <fa-icon [icon]="faClock"></fa-icon> - <strong>{{recipes.duration}}min</strong></p>
         </div>
         <div class="row characteristicBox mt-5">
-            <p class="characteristic">Dificuldade <fa-icon [icon]="faTachometerAlt"></fa-icon> - <strong>{{dificulty}}</strong> </p>
+            <p class="characteristic">Dificuldade <fa-icon [icon]="faTachometerAlt"></fa-icon> - <strong>{{recipes.dificulty}}</strong> </p>
         </div>
     </div>
 </div>
