@@ -1,17 +1,35 @@
 <div class="container">
     <div class="row mt-5">
+
         <div class="col-4">
+            <div class="card" style ="width: 18rem;" *ngFor="let recipe of recipes">
+                <img class="card-img-top" src="{{recipe.imageUrl}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.title}}</h5>
+                    <button class="btn btn-light btn-outline-dark">Ver Mais</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+       <!--  <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" [src]=imageOneUrl alt="leite creme">
+                <img class="card-img-top" [src]={{recipe.imageUrl}} alt="leite creme">
                 <div class="card-body">
                     <h5 class="card-title">Leite Creme</h5>
-                    <a href="#" class="btn btn-light btn-outline-dark">Ver Mais</a>
+                    <a href="#" class="btn btn-light btn-outline-dark" >Ver Mais</a>
                 </div>
             </div>
         </div>
         <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" [src]=imageTwoUrl alt="bolo de chocolate">
+                <img class="card-img-top" src="#" alt="bolo de chocolate">
                 <div class="card-body">
                     <h5 class="card-title">Bolo de Chocolate</h5>
                     <a href="#" class="btn btn-light btn-outline-dark">Ver Mais</a>
@@ -20,12 +38,12 @@
         </div>
         <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" [src]=imageThreeUrl alt="baba de camelo">
+                <img class="card-img-top" src="#" alt="baba de camelo">
                 <div class="card-body">
                     <h5 class="card-title">Baba de Camelo</h5>
-                    <a href="#" class="btn btn-light btn-outline-dark">Ver Mais</a>
+                    <a href="#" class="btn btn-light btn-outline-dark" >Ver Mais</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
