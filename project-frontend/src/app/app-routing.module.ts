@@ -10,7 +10,7 @@ import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-de
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
   {path:'receitas', component: ReceitasComponent},
-  {path:'recipe-description', component:RecipeDescriptionComponent},
+  {path:'recipe-description/:id', component:RecipeDescriptionComponent},
   {path:'**', component: NotFoundComponent},
   
 ];

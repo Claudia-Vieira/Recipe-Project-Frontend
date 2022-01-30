@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -10,26 +10,56 @@ import { Recipe } from 'src/app/model/recipes';
   templateUrl: './recipe-description.component.html',
   styleUrls: ['./recipe-description.component.css']
 })
-export class RecipeDescriptionComponent {
+export class RecipeDescriptionComponent implements OnInit {
 
-  public recipes: any;
+  public recipe?: Recipe
+  public id?: number;
 
-  constructor(private router: Router, private recipeService: RecipeService) {
-   
-
- 
-  }
- 
-}
-
-/*   constructor(private router: Router, private recipeService: RecipeService) {
-    this.recipeService.getRecipes().subscribe(result => {
-      this.recipes = result;
-    }, error => console.error(error));
-  } */
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService) {
 
     
-  /* public title: string = "Receita";
+    }
+  
+  ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('Id'));
+    this.recipeService.getRecipeById(this.id).subscribe(recipe => {
+      this.recipe = recipe;
+    }); 
+   
+  }
+
+}
+
+ /*  public recipes: any;
+
+  @Input() recipe: Recipe
+
+  constructor(private router: Router, private recipeService: RecipeService) {
+
+    this.recipe = {} as Recipe;
+
+    this.recipeService.getRecipes().subscribe(result => {
+      this.recipes = result;
+    },);
+ 
+  } */
+
+  /* public recipes: any;
+
+  constructor(private router: Router, private recipeService: RecipeService) {
+    
+
+      this.recipeService.getRecipeById(1).subscribe(result => {
+        this.recipes = result;
+      },);
+   
+    } */
+
+ 
+
+
+    
+ /* public title: string = "Receita";
   public imageUrl:string = "/assets/baba-camelo.jpg";
   public duration:number = 30;
   public dificulty:string = "Fácil";

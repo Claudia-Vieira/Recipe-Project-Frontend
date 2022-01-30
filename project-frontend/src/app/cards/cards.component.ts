@@ -11,15 +11,16 @@ import { RecipeService } from '../services/recipe.service';
 export class CardsComponent{
 
 
-  public recipes: any;
+  
+  @Input() recipe: Recipe
 
-  /* @Input() recipe: Recipe */
+  public recipes: any;
  
 
   constructor(private router: Router, private recipeService: RecipeService) {
 
     
-  /*   this.recipe = {} as Recipe; */
+    this.recipe = {} as Recipe;
 
      
     this.recipeService.getRecipes().subscribe(result => {
@@ -27,12 +28,12 @@ export class CardsComponent{
     },);
  
   }
-/* 
+
   navigateToDetails() {
 
-    this.router.navigate(['/recipe-description', this.recipe.Id]);
+    this.router.navigate(['api/recipes', this.recipe.Id]);
 
-  } */
+  }
 
   
 }
