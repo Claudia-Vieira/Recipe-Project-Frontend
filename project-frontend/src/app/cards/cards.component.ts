@@ -9,29 +9,26 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent{
-
-
-  
-  @Input() recipe: Recipe
-
+ 
+ 
   public recipes: any;
  
 
   constructor(private router: Router, private recipeService: RecipeService) {
 
     
-    this.recipe = {} as Recipe;
-
-     
+        
     this.recipeService.getRecipes().subscribe(result => {
       this.recipes = result;
     },);
- 
+    
   }
 
-  navigateToDetails() {
+  
 
-    this.router.navigate(['api/recipes', this.recipe.Id]);
+  navigateToDescription() {
+
+    this.router.navigate(['/recipe-description', this.recipes[0].id]);
 
   }
 

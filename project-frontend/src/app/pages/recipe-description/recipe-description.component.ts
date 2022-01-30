@@ -21,12 +21,29 @@ export class RecipeDescriptionComponent implements OnInit {
     }
   
   ngOnInit(): void {
-    this.id = Number(this.route.snapshot.paramMap.get('Id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.recipeService.getRecipeById(this.id).subscribe(recipe => {
       this.recipe = recipe;
     }); 
    
   }
+public faClock = faClock;
+public faTachometerAlt = faTachometerAlt;
+ 
+
+public ingredients = [
+    {id:'1', name:'leite condensado cozido'},
+    {id:'2', name: 'ovos'},
+    {id:'3', name: 'amêndoa torrada'},
+]
+
+public steps = [
+  {id:'1', description:'Comece por separar as gemas das claras.'},
+  {id:'2', description: 'Numa tigela, deite o leite condensado cozido e as gemas e bata bem, até obter uma mistura homogénea.'},
+  {id:'3', description: 'Noutro recipiente, bata as claras em castelo.'},
+  {id:'4', description: 'Junte-as ao preparado anterior, envolvendo cuidadosamente.'},
+  {id:'5', description: 'Leve a baba de camelo ao frio e sirva decorado com a amêndoa torrada laminada.'},
+]
 
 }
 
@@ -69,22 +86,6 @@ export class RecipeDescriptionComponent implements OnInit {
   ngOnInit(): void {
   }  */
  
-/* 
-public faClock = faClock;
-public faTachometerAlt = faTachometerAlt;
- 
 
-public ingredients = [
-    {id:'1', name:'leite condensado cozido'},
-    {id:'2', name: 'ovos'},
-    {id:'3', name: 'amêndoa torrada'},
-]
 
-public steps = [
-  {id:'1', description:'Comece por separar as gemas das claras.'},
-  {id:'2', description: 'Numa tigela, deite o leite condensado cozido e as gemas e bata bem, até obter uma mistura homogénea.'},
-  {id:'3', description: 'Noutro recipiente, bata as claras em castelo.'},
-  {id:'4', description: 'Junte-as ao preparado anterior, envolvendo cuidadosamente.'},
-  {id:'5', description: 'Leve a baba de camelo ao frio e sirva decorado com a amêndoa torrada laminada.'},
-] */
 
