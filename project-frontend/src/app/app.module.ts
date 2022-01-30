@@ -22,6 +22,7 @@ import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-de
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IngredientService } from './services/ingredient.service';
+import { StepService } from './services/step.service';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { IngredientService } from './services/ingredient.service';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [RecipeService, IngredientService],
+  providers: [RecipeService, IngredientService, StepService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

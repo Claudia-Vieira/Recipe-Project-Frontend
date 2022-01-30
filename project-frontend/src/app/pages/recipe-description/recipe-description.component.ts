@@ -4,8 +4,8 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/model/recipes';
-import {Ingredient} from 'src/app/model/ingredients'
 import { IngredientService } from 'src/app/services/ingredient.service';
+import { StepService } from 'src/app/services/step.service'; 
 
 @Component({
   selector: 'app-recipe-description',
@@ -17,8 +17,9 @@ export class RecipeDescriptionComponent implements OnInit {
   public recipe?: Recipe
   public id?: number;
   public ingredients: any;
+  public steps: any;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private ingredientService:IngredientService) {
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private ingredientService:IngredientService, private stepService:StepService) {
 
     
     }
@@ -28,72 +29,20 @@ export class RecipeDescriptionComponent implements OnInit {
     this.recipeService.getRecipeById(this.id).subscribe(recipe => {
       this.recipe = recipe;
     });
-    /* this.ingredientService.getIngredientById(this.id).subscribe(ingredient => {
-      this.ingredient = ingredient;
-    });  */
+   
     this.ingredientService.getIngredients().subscribe(result => {
       this.ingredients = result;
+    },);
+
+    this.stepService.getSteps().subscribe(result => {
+      this.steps = result;
     },);
    
   }
 public faClock = faClock;
 public faTachometerAlt = faTachometerAlt;
  
-
-/* public ingredients = [
-    {id:'1', name:'leite condensado cozido'},
-    {id:'2', name: 'ovos'},
-    {id:'3', name: 'amêndoa torrada'},
-] */
-
-public steps = [
-  {id:'1', description:'Comece por separar as gemas das claras.'},
-  {id:'2', description: 'Numa tigela, deite o leite condensado cozido e as gemas e bata bem, até obter uma mistura homogénea.'},
-  {id:'3', description: 'Noutro recipiente, bata as claras em castelo.'},
-  {id:'4', description: 'Junte-as ao preparado anterior, envolvendo cuidadosamente.'},
-  {id:'5', description: 'Leve a baba de camelo ao frio e sirva decorado com a amêndoa torrada laminada.'},
-]
-
 }
-
- /*  public recipes: any;
-
-  @Input() recipe: Recipe
-
-  constructor(private router: Router, private recipeService: RecipeService) {
-
-    this.recipe = {} as Recipe;
-
-    this.recipeService.getRecipes().subscribe(result => {
-      this.recipes = result;
-    },);
- 
-  } */
-
-  /* public recipes: any;
-
-  constructor(private router: Router, private recipeService: RecipeService) {
-    
-
-      this.recipeService.getRecipeById(1).subscribe(result => {
-        this.recipes = result;
-      },);
-   
-    } */
-
- 
-
-
-    
- /* public title: string = "Receita";
-  public imageUrl:string = "/assets/baba-camelo.jpg";
-  public duration:number = 30;
-  public dificulty:string = "Fácil";
-
-
-  constructor() { }
-  ngOnInit(): void {
-  }  */
  
 
 
