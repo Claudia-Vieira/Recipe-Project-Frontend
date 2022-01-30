@@ -21,6 +21,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-description.component';
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IngredientService } from './services/ingredient.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

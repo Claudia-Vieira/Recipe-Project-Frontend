@@ -5,7 +5,7 @@
                 <img class="card-img-top" src="{{recipe.imageUrl}}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{recipe.title}}</h5>
-                    <button class="btn btn-light btn-outline-dark" (click)="navigateToDescription()">Ver Mais</button>
+                    <button class="btn btn-light btn-outline-dark" (click)="navigateToDescription(recipe.id)">Ver Mais</button>
                 </div>
             </div>
         </div>

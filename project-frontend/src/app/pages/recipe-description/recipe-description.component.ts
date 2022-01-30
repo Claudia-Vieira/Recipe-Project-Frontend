@@ -4,6 +4,8 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/model/recipes';
+import {Ingredient} from 'src/app/model/ingredients'
+import { IngredientService } from 'src/app/services/ingredient.service';
 
 @Component({
   selector: 'app-recipe-description',
@@ -14,8 +16,9 @@ export class RecipeDescriptionComponent implements OnInit {
 
   public recipe?: Recipe
   public id?: number;
+  public ingredients: any;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService) {
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private ingredientService:IngredientService) {
 
     
     }
@@ -24,18 +27,24 @@ export class RecipeDescriptionComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.recipeService.getRecipeById(this.id).subscribe(recipe => {
       this.recipe = recipe;
-    }); 
+    });
+    /* this.ingredientService.getIngredientById(this.id).subscribe(ingredient => {
+      this.ingredient = ingredient;
+    });  */
+    this.ingredientService.getIngredients().subscribe(result => {
+      this.ingredients = result;
+    },);
    
   }
 public faClock = faClock;
 public faTachometerAlt = faTachometerAlt;
  
 
-public ingredients = [
+/* public ingredients = [
     {id:'1', name:'leite condensado cozido'},
     {id:'2', name: 'ovos'},
     {id:'3', name: 'amêndoa torrada'},
-]
+] */
 
 public steps = [
   {id:'1', description:'Comece por separar as gemas das claras.'},
