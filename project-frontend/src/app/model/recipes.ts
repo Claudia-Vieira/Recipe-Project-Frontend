@@ -1,4 +1,5 @@
 import { Ingredient } from "./ingredients";
+import { Step } from "./steps";
 
 export interface Recipe {
     Id: number;
@@ -7,6 +8,6 @@ export interface Recipe {
     duration:number;
     dificulty:string;
     ingredients?: Ingredient[];
-    steps: string;
+    steps?: Step[];
     
   }
