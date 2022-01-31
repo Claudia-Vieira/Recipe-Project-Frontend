@@ -21,7 +21,7 @@
 </div>
 <div class="row mt-5">
     <ul>
-        <li *ngFor="let ingredient of ingredients">
+        <li *ngFor="let ingredient of recipe?.ingredients">
             {{ingredient.name}} - {{ingredient.quantity}}
         </li>
     </ul>

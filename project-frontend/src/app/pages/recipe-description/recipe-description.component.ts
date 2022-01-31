@@ -28,6 +28,7 @@ export class RecipeDescriptionComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.recipeService.getRecipeById(this.id).subscribe(recipe => {
       this.recipe = recipe;
+      console.log(recipe.ingredients);
     });
    
     this.ingredientService.getIngredients().subscribe(result => {
