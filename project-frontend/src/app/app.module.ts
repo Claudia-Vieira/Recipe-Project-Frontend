@@ -23,6 +23,7 @@ import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IngredientService } from './services/ingredient.service';
 import { StepService } from './services/step.service';
+import { AddFormComponent } from './add-form/add-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { StepService } from './services/step.service';
     ReceitasComponent,
     HomeComponent,
     NotFoundComponent,
-    RecipeDescriptionComponent
+    RecipeDescriptionComponent,
+    AddFormComponent,
   ],
   imports: [
     BrowserModule,
