@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-receitas',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./receitas.component.css']
 })
 export class ReceitasComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  navigateToAddForm(){
+    this.router.navigateByUrl('adicionar');
+  }
 }
