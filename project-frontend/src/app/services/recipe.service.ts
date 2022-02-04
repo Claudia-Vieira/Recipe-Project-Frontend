@@ -19,4 +19,17 @@ export class RecipeService {
   getRecipeById(Id:number): Observable<Recipe>{
     return this.http.get<Recipe>(this.baseUrl + `api/recipes/${Id}`)
   }
+
+  deleteRecipeById(Id:number):Observable<Recipe>{
+    return this.http.delete<Recipe>(this.baseUrl + `api/recipes/${Id}`)
+  }
+
+
+  
+
+ /*  deleteRecipes(): Observable<Recipe[]> {
+    return this.http.delete<Recipe[]>(this.baseUrl + 'api/recipes');
+  } */
+
+
 }

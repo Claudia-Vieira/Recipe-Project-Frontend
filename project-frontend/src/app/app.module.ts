@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RecipeService } from './services/recipe.service';
+import { HttpClientModule } from '@angular/common/http';
 
 //"Style"
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,11 +21,12 @@ import { ReceitasComponent } from './pages/receitas/receitas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RecipeDescriptionComponent } from './pages/recipe-description/recipe-description.component';
-import { RecipeService } from './services/recipe.service';
-import { HttpClientModule } from '@angular/common/http';
+import { AddFormComponent } from './add-form/add-form.component';
+
+//Services
 import { IngredientService } from './services/ingredient.service';
 import { StepService } from './services/step.service';
-import { AddFormComponent } from './add-form/add-form.component';
+
 
 
 @NgModule({

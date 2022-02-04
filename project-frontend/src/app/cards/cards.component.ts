@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../model/recipes';
 import { RecipeService } from '../services/recipe.service';
 import { IngredientService } from '../services/ingredient.service';
+import { faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cards',
@@ -11,21 +12,17 @@ import { IngredientService } from '../services/ingredient.service';
 })
 export class CardsComponent{
  
- 
+  public faTrashAlt = faTrashAlt;
   public recipes: any;
   public ingredients: any;
+  public id?: number;
  
 
-  constructor(private router: Router, private recipeService: RecipeService, private ingredientService: IngredientService) {
+  constructor(private router: Router, private route: ActivatedRoute, private recipeService: RecipeService) {
    
     this.recipeService.getRecipes().subscribe(result => {
       this.recipes = result;
     },);
-
-    this.ingredientService.getIngredients().subscribe(result => {
-      this.ingredients = result;
-    },);
-    
   }
 
   navigateToDescription(Id:number) {
@@ -34,6 +31,14 @@ export class CardsComponent{
 
   }
 
-  
+  deleteRecipeById (id:number) {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.recipeService.deleteRecipeById(id).subscribe(result => {
+      this.recipes = result;
+      ;
+    },);
+    
 }
+ 
 
+}
