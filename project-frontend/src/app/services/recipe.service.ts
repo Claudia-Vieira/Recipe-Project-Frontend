@@ -24,12 +24,9 @@ export class RecipeService {
     return this.http.delete<Recipe>(this.baseUrl + `api/recipes/${Id}`)
   }
 
-
-  
-
- /*  deleteRecipes(): Observable<Recipe[]> {
-    return this.http.delete<Recipe[]>(this.baseUrl + 'api/recipes');
-  } */
+  addRecipe(recipe:any):Observable<Recipe[]>{
+    return this.http.post<Recipe[]>(this.baseUrl + 'api/recipes', recipe);
+  }
 
 
 }

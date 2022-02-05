@@ -37,6 +37,7 @@ export class CardsComponent{
       this.recipes = result;
       ;
     },);
+    this.router.navigate(['/receitas']);
     
 }
  

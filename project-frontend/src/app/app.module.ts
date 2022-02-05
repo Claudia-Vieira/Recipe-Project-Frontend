@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //"Style"
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,6 +30,7 @@ import { StepService } from './services/step.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,8 @@ import { StepService } from './services/step.service';
     NgbModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [RecipeService, IngredientService, StepService],
   bootstrap: [AppComponent]
