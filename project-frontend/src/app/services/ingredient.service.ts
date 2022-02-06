@@ -2,6 +2,7 @@ import { Inject, Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ingredient } from '../model/ingredients';
+import { Recipe } from '../model/recipes';
 
 
 @Injectable()
@@ -19,4 +20,10 @@ export class IngredientService {
   getIngredientById(Id:number): Observable<Ingredient>{
     return this.http.get<Ingredient>(this.baseUrl + `api/ingredients/${Id}`)
   }
+
+  /* addNewIngredient(ingredient:any):Observable<Ingredient[]>{
+    
+    return this.http.post<Ingredient[]>(this.baseUrl + 'api/ingredients', ingredient)
+
+} */
 }

@@ -1,5 +1,5 @@
 import { Inject, Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Recipe } from '../model/recipes';
 
@@ -8,6 +8,7 @@ import { Recipe } from '../model/recipes';
 export class RecipeService {
 
   private baseUrl = 'https://localhost:44380/';
+  
 
   constructor(private http: HttpClient,) {
   }
@@ -25,8 +26,11 @@ export class RecipeService {
   }
 
   addRecipe(recipe:any):Observable<Recipe[]>{
-    return this.http.post<Recipe[]>(this.baseUrl + 'api/recipes', recipe);
-  }
-
+    
+    return this.http.post<Recipe[]>(this.baseUrl + 'api/recipes', recipe)
 
 }
+
+}
+      
+

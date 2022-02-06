@@ -1,6 +1,10 @@
 label {
     font-weight: bold;
 }
-span{
+p{
     opacity: 0.9;
+}
+#formFileSm{
+    border:none;
+    padding-left: 0;
 }
