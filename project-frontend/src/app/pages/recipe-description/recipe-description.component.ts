@@ -39,6 +39,7 @@ export class RecipeDescriptionComponent implements OnInit {
     },);
    
   }
+  
 public faClock = faClock;
 public faTachometerAlt = faTachometerAlt;
  
