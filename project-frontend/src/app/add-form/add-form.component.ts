@@ -42,6 +42,8 @@ export class AddFormComponent implements OnInit {
   })  
   }
  
+  /* Introdução das funções para os ingredientes e para os passos - falta a passagem da informação introduzida em seguida para o array ingredientes e steps do recipeForm */
+
   addNewIngredient() {
 
     const ingredientForm = this._fb.group({
@@ -73,6 +75,8 @@ deleteStep(stepIndex: number) {
   ngOnInit(): void {
               
   }
+
+  /* Submit form */
 
  save(){
 

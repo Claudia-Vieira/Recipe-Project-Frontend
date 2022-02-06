@@ -40,8 +40,7 @@
       
      <h2 class="mb-3 mt-5">Ingredientes</h2>
 
-     
-<!-- <form [formGroup]="recipeForm" (ngSubmit)="addNewIngredient()"> -->
+
      <div formArrayName="ingredients">
       <div *ngFor="let ingredients of ingredients.controls; let i = index">
 
@@ -55,11 +54,10 @@
 
           <button class="btn btn-light btn-outline-dark mt-3" (click)="addNewIngredient()">Adicionar</button>
       </div>
-    <!-- </form> -->
 
     <h2 class="mb-3 mt-5">Preparação</h2>
 
-    <!-- <form [formGroup]="recipeForm" (ngSubmit)="addNewIngredient()"> -->
+
       <div formArrayName="steps">
         <div *ngFor="let steps of steps.controls; let i = index">
   
@@ -73,7 +71,7 @@
   
             <button class="btn btn-light btn-outline-dark mt-3" (click)="addNewStep()">Adicionar</button>
         </div>
-      <!-- </form> -->
+
 
      <!--Submit-->
 
